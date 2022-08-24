@@ -1,0 +1,19 @@
+-- UNNAMED/ANONYMOUS BLOCK
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    VDAY VARCHAR2(50);
+BEGIN
+    vday := TO_CHAR(SYSDATE, 'DAY');
+    DBMS_OUTPUT.PUT_LINE('Today is ' || vday);
+    vday := TO_CHAR(SYSDATE);
+    DBMS_OUTPUT.PUT_LINE('Today is ' || vday);
+END;
+
+DECLARE
+    VDAY VARCHAR2(50);
+BEGIN
+    vday := GET_DAY_NAME(SYSDATE);
+    DBMS_OUTPUT.PUT_LINE('Today is ' || vday);
+END;
