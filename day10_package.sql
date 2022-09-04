@@ -10,6 +10,8 @@ CREATE OR REPLACE PACKAGE MyTypes AS
     myException EXCEPTION;
 
     PROCEDURE calisanlar(p_dept_id employees.department_id%TYPE);
+    
+    FUNCTION daireAlani(r number) RETURN NUMBER;
 END MyTypes;
 /
 CREATE OR REPLACE PACKAGE BODY MyTypes AS
@@ -26,4 +28,11 @@ CREATE OR REPLACE PACKAGE BODY MyTypes AS
         END LOOP;
     CLOSE c_cursor;
     END;    
+    
+    FUNCTION daireAlani(r number) RETURN NUMBER IS
+        wsonuc  NUMBER;
+    BEGIN
+        wsonuc := MyTypes.PI * POWER(r, 2);
+        RETURN(wsonuc);
+    END;
 END;

@@ -17,3 +17,12 @@ BEGIN
 END;
 /
 EXECUTE MyTypes.calisanlar(60);
+/
+SELECT MyTypes.daireAlani(5) FROM dual;
+/
+DECLARE
+    wsonuc  NUMBER;
+BEGIN
+  wsonuc := MyTypes.daireAlani(5);
+  DBMS_OUTPUT.PUT_LINE(wsonuc);
+END;
